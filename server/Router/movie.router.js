@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('./modules/pool');
+const pool = require('../modules/pool');
 
 // Set up routes here:
-router.get('/movies', (req, res) => {
+router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM "movies";`;
     pool.query(sqlText)
         .then( (response) => {
@@ -14,3 +14,5 @@ router.get('/movies', (req, res) => {
             res.sendStatus(500);
         })
 })
+
+module.exports = router;

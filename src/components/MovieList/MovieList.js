@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import Details from '../Details/Details';
 import Edit from '../Edit/Edit';
 
-
-
 class MovieList extends Component {
+
+    
 
     componentDidMount() {
         this.props.dispatch({type:'FETCH_MOVIES'});
@@ -15,20 +15,20 @@ class MovieList extends Component {
 
     
     render() {
-        let item = this.props.item;
+    
         return (
           
             <>
                 <div className="App">
-                    
-                  
                     <div>
+                    <h1>Movie List</h1>
+                    <hr></hr>
                         {this.props.reduxStore.movies.map(item => {
                             return (
-                                <div>
-                                <p key={item.id}>{item.title}{item.description}</p>
+                                <div key={item.id}>
+                                <p>{item.title}<br />{item.description}</p>
                                
-                                <img src={item.poster} />
+                                <img onClick={(event) => this.props.history.push('/details')} src={item.poster} />
                                 </div>
                             )
                         })}

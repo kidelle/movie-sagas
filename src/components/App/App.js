@@ -16,8 +16,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>Movie List</h1>
-          <hr></hr>
+          
           <Route path="/" exact component={MovieList} />
           <Route path="/details" component={Details} />
           <Route path="/edit" component={Edit} />

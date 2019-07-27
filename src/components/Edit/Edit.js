@@ -7,10 +7,10 @@ class Edit extends Component {
         return (
             <div className="App">
                 <h1>Edit Page</h1>
-                <input type="text" placeholder="Movie Title">Movie Title</input>
-                <input type="text" placeholder="Description">Description</input>
-                <button>Cancel</button>
-                <button>Save</button>
+                <input type="text" placeholder="Movie Title"></input>
+                <input type="text" placeholder="Description"></input>
+                <button onClick={(event) => this.props.history.push('/')}>Cancel</button>
+                <button onClick={(event) => this.props.history.push('/')}>Save</button>
             </div>
         );
     }

@@ -7,8 +7,8 @@ class Details extends Component {
         return (
             <div className="App">
                 <h1>Details Page</h1>
-                <button>Back to List</button>
-                <button>Edit</button>
+                <button onClick={(event) => this.props.history.push('/')}>Back to List</button>
+                <button onClick={(event) => this.props.history.push('/edit')}>Edit</button>
             </div>
         );
     }

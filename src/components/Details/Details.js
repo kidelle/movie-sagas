@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class Details extends Component {
@@ -7,6 +8,8 @@ class Details extends Component {
         return (
             <div className="App">
                 <h1>Details Page</h1>
+                <hr></hr>
+                {JSON.stringify(this.props.reduxStore.details)}
                 <button onClick={(event) => this.props.history.push('/')}>Back to List</button>
                 <button onClick={(event) => this.props.history.push('/edit')}>Edit</button>
             </div>
@@ -14,4 +17,8 @@ class Details extends Component {
     }
 }
 
-export default Details;
+const putReduxStoreOnProps = (reduxStore) => ({
+    reduxStore
+})
+
+export default connect(putReduxStoreOnProps)(Details);

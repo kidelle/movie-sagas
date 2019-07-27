@@ -6,7 +6,8 @@ class Edit extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Edit Page</h1>
+                <h1>Edit Movie Title & Description</h1>
+                <hr></hr>
                 <input type="text" placeholder="Movie Title"></input>
                 <input type="text" placeholder="Description"></input>
                 <button onClick={(event) => this.props.history.push('/')}>Cancel</button>

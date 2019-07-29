@@ -20,7 +20,7 @@ editButton = (event) => {
             <div className="App">
                 <h1>Movie Details</h1>
                 <hr></hr>
-                {JSON.stringify(this.props.reduxStore.details)}
+                {/*JSON.stringify(this.props.reduxStore.details)*/}
                 <button onClick={this.backButton}type="submit">Back to List</button>
                 <button onClick={this.editButton}type="submit">Edit</button>
             </div>

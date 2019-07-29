@@ -6,7 +6,7 @@ class Edit extends Component {
     
     state = {
         id: this.props.reduxStore.details.id,
-        title: '',
+        name: '',
         description: '',
     }
 
@@ -15,8 +15,8 @@ class Edit extends Component {
     }
 
     saveButton = (event) => {
-        this.props.history.push('/')
-        this.props.dispatch( {type: 'EDIT_MOVIE', payload: this.state} )
+        this.props.history.push('/details')
+        this.props.dispatch( {type: 'EDIT_LIST', payload: this.state} )
     }
 
     handleChange = (propertyName, event) => {
@@ -37,7 +37,7 @@ class Edit extends Component {
                 <h1>Edit Movie Title & Description</h1>
                 <hr></hr>
                 <input type="text" value={this.state.title} 
-                onChange={ (event) => this.handleChange('title', event) }
+                onChange={ (event) => this.handleChange('name', event) }
                 placeholder="Movie Title"></input>
                 
                 <input type="text" value={this.state.description}

@@ -22,6 +22,7 @@ class MovieList extends Component {
           
             <>
                 <div className="App">
+                    
                     <div>
                     <h1>Movie List</h1>
                     <hr></hr>
@@ -37,6 +38,7 @@ class MovieList extends Component {
                     </div>
 
                 </div>
+               
             </>
 
           

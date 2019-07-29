@@ -15,7 +15,7 @@ class Edit extends Component {
     }
 
     saveButton = (event) => {
-        this.props.history.push('/details')
+        this.props.history.push('/')
         this.props.dispatch( {type: 'EDIT_LIST', payload: this.state} )
     }
 

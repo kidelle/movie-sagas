@@ -1,89 +1,84 @@
-# React-Redux with Sagas
+# Movie-Sagas
 
-> **PLEASE COMMENT YOUR CODE.** Do not clone this repository. Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
+This app gives you a list of movies with a Title, Movie Photo, and a Description of the movie. Whe you click on the poster it will route you to the Details Page where you will have the option of editing the movie. Clicking the edit button routes you to the Edit Page with two unput fields for a 'Movie Title' and 'Description'. After you input the new data and click 'save', the new data is rendered to DOM and also updates the database. 
 
-For this weekend challenge you'll be building a movie application!  
 
-## Database Setup
+## Built With
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
-3. You will need to create the junction table between the `movies` and `genres` tables!
+- React
+- Javascript
+- CSS
+- SQL
 
-## Install Dependencies
 
-1. `npm install`
-2. `npm run server`
-3. `npm run client`
 
-## Notes
+### Prerequisites
 
-### Tags
-We've given you some starter genres in the database. Feel free to change or add some with Postico.
- 
-### Movies
-We've added some movie posters in the `public/images` folder, and the database is set up to use them.
+- [Node.js](https://nodejs.org/en/)
+- [postgresSQL](https://www.postgresql.org)
 
-### Relationships
-Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
-## Video Wireframe
+### Installing
 
-[video ![Home Wireframe](/wireframes/home-wireframe.png)](https://vimeo.com/343530927)
+1. Download this project.
+2. `npm install`
+3. `npm run server`
+4. `npm run client`
 
-## Feature List
+## Screen Shot
 
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
 
-### Home / List Page
 
-This should display all of the movies in the movie database. When a movie poster is clicked, a user should be brought to the `/details` view.
+
+
+## Completed Features
+
+ ### Movie List Page
+
+ - [x]
+
+Displays all of the movies from the movie database. When a movie poster is clicked, the user is directed to the Details Page.
 
 ### Details Page
 
-This should show all details **including genres**, for the selected movie.
+- [x]
 
-The details page should have the buttons:
+Displays all movie details includeing Title, Movie Poster, Description, and Genre for the selected movie.
 
-- `Back to List` button, which should bring the user to the Home Page
-- `Edit` button, which should bring the user to the Edit Page
+The Details Page has two buttons:
 
-> Base functionality does not require the movie details to load correctly after refresh of the browser.
+- `Back to List` button, which brings the user back to the Movie List Page.
+- `Edit` button, which brings the user to the Edit Page.
 
 ### Edit Page
 
-This should show:
+- [x]
 
-- an input field (for changing the movie title), for the selected movie.
-- a textarea (for changing the movie description)
+Displays two input fields:
 
-The details page should have the buttons:
+- an input field for changing the Movie Title, for the selected movie.
+- an input field for changing the Movie Description.
 
-- `Cancel` button, which should bring the user to the Details Page
-- `Save` button, which should update the title and description in the database and bring the user to the Details Page
+The Edit Page has two buttons:
 
-> Base functionality does not require the current values (the existing movie title and description) to populate in the input and textarea.
+- `Cancel` button, which brings the user to the Details Page.
+- `Save` button, which updates the Title and Description in the database and brings the user to the Movie List Page.
 
-> Base functionality does not require the movie information to load correctly after refresh of the browser.
 
-### General Tasks
+### Next Steps
 
-As one of your last projects, it's possible you will be sharing this with employers, so be sure to follow best practices and make it look good!
-
-- [ ] Invest some time in styling it up!
-    - [ ] Research grids for you movie posters on the Move List page
-    - [ ] Add route change animations
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
-- [ ] Comment your code.
-- [ ] Update this README to include a description of the project in your own words.
-
-## Stretch Goals
-
-- [ ] Display the current values in the input (title) and textarea (description) on the Edit Page
-- [ ] Display all genres on movie list page. Research [array_agg](https://stackoverflow.com/questions/43458174/how-to-save-and-return-javascript-object-with-subarray-in-normalized-sql) to make this possible.
-- [ ] Move sagas and reducers out of your `index.js` and into separate files (ideally in `src/redux/reducers` and `src/redux/sagas` folders).
-- [ ] Allow the user to refresh the details or edit page. The url for the details page would be something like `/details/1` for movie with id of `1`. Research [react router params](https://reacttraining.com/react-router/web/example/url-params).
+- [ ] Display the current values in the Title and Description inputs on the Edit Page.
 - [ ] Allow the user to add a genre to a movie.
 - [ ] Allow the user to remove a genre from a movie.
-- [ ] Only display the top 10 movies, and allow the user to search for movie titles with a search bar on the home page (you can do this on the client side or the server side, server side is a bigger stretch, but good practice).
-- [ ] Create an `Admin` page. Add a link from the `Home` page to the `Admin` page. The page should initially display a login form (an input for username and an input for password). When the user enters the correct username (`camera`) and password (`action`), the page should display a form to add genres to the database, and a list of all of the genres with an `x` to remove them from the database. Note: This isn't actually secure, but it's pretty fun, and really good practice.
+
+## Deployment
+
+
+## Authors
+
+* Danielle Martain
+
+
+## Acknowledgments
+
+* Playfair Cohort for being so helpful and awesome!

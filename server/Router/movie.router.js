@@ -17,9 +17,12 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {{
     let movieId = req.params.id;
-    const sqlText = `SELECT "genres"."name", "movie_genre"."genre_id" from "genres"
-    JOIN "movie_genre" ON "movie_genre"."genre_id" = "genres"."id"
-    WHERE "movie_id" = $1;`; 
+    const sqlText = `SELECT "movies"."title", "movies"."description", "genres"."name",
+    "movies"."id"
+    FROM "movie_genre"
+    JOIN "movies" ON "movies"."id" = "movie_genre"."movie_id"
+    JOIN "genres" ON "genres"."id" = "movie_genre"."genre_id"
+    WHERE "movies"."id" = $1;`; 
     const values = [movieId]
     pool.query(sqlText, values)
     .then( (response) => {

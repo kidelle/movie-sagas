@@ -29,6 +29,7 @@ router.get('/:id', (req, res) => {{
     const values = [movieId]
     pool.query(sqlText, values)
     .then( (response) => {
+        console.log('This is the response.', response);
         res.send(response.rows[0]);
     })
     .catch( (error) => {

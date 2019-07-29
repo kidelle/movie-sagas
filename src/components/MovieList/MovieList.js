@@ -21,7 +21,7 @@ class MovieList extends Component {
         return (
           
             <>
-                <div className="App">
+                <div className="Container">
                     
                     <div>
                     <h1>Movie List</h1>
@@ -29,7 +29,9 @@ class MovieList extends Component {
                         {this.props.reduxStore.movies.map(item => {
                             return (
                                 <div key={item.id}>
-                                <p>{item.title}<br />{item.description}</p>
+                                <p className="Title">{item.title}</p>
+                                <br />
+                                <p className="Description">{item.description}</p>
                                
                                 <img onClick={(event) => this.onChange(item)} src={item.poster} alt=''/>
                                 </div>

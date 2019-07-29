@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {{
     const values = [movieId]
     pool.query(sqlText, values)
     .then( (response) => {
-        res.send(response.rows);
+        res.send(response.rows[0]);
     })
     .catch( (error) => {
         console.log(`Error selecting movie genre.`, error);

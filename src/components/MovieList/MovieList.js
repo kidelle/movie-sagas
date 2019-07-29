@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import routes to other views
-import Details from '../Details/Details';
-import Edit from '../Edit/Edit';
 
 class MovieList extends Component {
 
     
-
     componentDidMount() {
         this.props.dispatch({type:'FETCH_MOVIES'});
     }
 
     onChange = (item) => {
-        console.log(item.id);
+        console.log('Find details', item.id);
         this.props.dispatch( {type: 'FETCH_DETAILS', payload: item.id} );
         this.props.history.push('/details')
     }
@@ -34,7 +30,7 @@ class MovieList extends Component {
                                 <div key={item.id}>
                                 <p>{item.title}<br />{item.description}</p>
                                
-                                <img onClick={(event) => this.onChange(item)} src={item.poster} />
+                                <img onClick={(event) => this.onChange(item)} src={item.poster} alt=''/>
                                 </div>
                             )
                         })}

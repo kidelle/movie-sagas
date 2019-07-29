@@ -17,6 +17,7 @@ function* rootSaga() {
     // TO-DO - add sagas here:
     yield takeEvery('FETCH_MOVIES', fetchMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('EDIT_LIST', editList);
 }
 
 function* fetchMovies() {
@@ -27,7 +28,7 @@ function* fetchMovies() {
         yield put ({type: 'SET_MOVIES', payload: response.data});
     } catch (error) {
         console.log('Error getting movies', error);
-        alert('Could not get Movies at this time. Try again later');
+        alert('Could not get Movies at this time. Try again later.');
     }
 }
 
@@ -37,7 +38,17 @@ function* fetchDetails(action) {
         yield put ({type: 'SET_DETAILS', payload: response.data});
     } catch (error) {
         console.log('Error getting details', error);
-        alert('Could not get movie details at this time. Try again later');
+        alert('Could not get movie details at this time. Try again later.');
+    }
+}
+
+function* editList(action) {
+    try {
+        yield Axios.put(`/movies/update/${action.payload.id}`, action.payload);
+        yield put({type: 'FETCH_MOVIES'})
+    } catch (error) {
+        console.log('Error updating Movie List', error);
+        alert('Could not update movie list at this time. Try again later.');
     }
 }
 

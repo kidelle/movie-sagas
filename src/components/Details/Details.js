@@ -3,17 +3,36 @@ import { connect } from 'react-redux';
 
 
 class Details extends Component {
-    // Renders the entire app on the DOM
+   
+backButton = (event) => {
+    this.props.history.push('/')
+}
+
+editButton = (event) => {
+    this.props.history.push('/edit')
+}
+
     render() {
+        let details = this.props.reduxStore.details;
+
         return (
+            <>
             <div className="App">
-                <h1>Details Page</h1>
+                <h1>Movie Details</h1>
                 <hr></hr>
-                {JSON.stringify(this.props.reduxStore.details)}
-                <button onClick={(event) => this.props.history.push('/')}>Back to List</button>
-                <button onClick={(event) => this.props.history.push('/edit')}>Edit</button>
+                {/*JSON.stringify(this.props.reduxStore.details)*/}
+                <button onClick={this.backButton}type="submit">Back to List</button>
+                <button onClick={this.editButton}type="submit">Edit</button>
             </div>
+            <div>
+                <p>Movie Details:</p>
+                <p>{details.title}</p>
+                <p>{details.description}</p>
+                <p>{details.name}</p>
+            </div>
+            </>
         );
+        
     }
 }
 

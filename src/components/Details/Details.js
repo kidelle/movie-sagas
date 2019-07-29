@@ -26,8 +26,8 @@ editButton = (event) => {
             </div>
             <div>
                 <p>Movie Details:</p>
-                <p>{details.title}</p>
-                <p>{details.description}</p>
+                <p className="movieTitle">{details.title}</p>
+                <p className="movieInfo">{details.description}</p>
                 <p>{details.name}</p>
             </div>
             </>

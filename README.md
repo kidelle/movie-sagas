@@ -28,9 +28,9 @@ This app gives you a list of movies with a Title, Movie Photo, and a Description
 ## Screen Shot
 
 
-![Movie List] (movieList.jpg)
-![Selcected Movie] (movieList2.jpg)
-![Edit Movie] (movieList3.jpg)
+![Movie List] (./Screenshots/movieList.png)
+![Selcected Movie] (movieList2.png)
+![Edit Movie] (movieList3.png)
 
 
 ## Completed Features
